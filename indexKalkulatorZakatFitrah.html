@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat Fitrah</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-mosque"></i> Kalkulator Zakat Fitrah</h1>
+            <p>Hitung zakat fitrah Anda dengan mudah dan akurat</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-card">
+                <h2><i class="fas fa-user"></i> Data Keluarga</h2>
+                <form id="zakatForm">
+                    <div class="form-group">
+                        <label for="namaKepala">Nama Kepala Keluarga</label>
+                        <input type="text" id="namaKepala" placeholder="Masukkan nama kepala keluarga" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jumlahAnggota">Jumlah Anggota Keluarga</label>
+                        <input type="number" id="jumlahAnggota" min="1" placeholder="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Zakat</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="jenisZakat" value="beras" checked>
+                                <span><i class="fas fa-seedling"></i> Beras</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="jenisZakat" value="uang">
+                                <span><i class="fas fa-coins"></i> Uang</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="inputHargaBeras" class="form-group hidden">
+                        <label for="hargaBeras">Harga Beras per Kg (Rp)</label>
+                        <input type="number" id="hargaBeras" min="0" step="1000" placeholder="15000">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i> Hitung Zakat
+                    </button>
+
+                    <button type="button" id="resetBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="result-card hidden">
+                <h2><i class="fas fa-chart-bar"></i> Hasil Perhitungan</h2>
+                <div id="resultContent"></div>
+                <button id="hitungLagiBtn" class="btn btn-secondary">
+                    <i class="fas fa-redo"></i> Hitung Ulang
+                </button>
+            </div>
+        </main>
+
+        <div id="notification" class="notification hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
